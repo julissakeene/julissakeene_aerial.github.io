@@ -201,68 +201,65 @@
 
 /* BG */
 
-#bg {
-	@include vendor('animation', 'bg #{_duration(bg)} linear infinite');
-	@include vendor('backface-visibility', 'hidden');
-	@include vendor('transform', 'translate3d(0,0,0)');
-  
-	/* Set your background with this */
-	background: _misc(bg);
-  
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 100vh;
-	left: 0;
-	opacity: 1;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-  }
-  
-  @include bg(_misc(bg-width) * 1.5);
-  
-  /* Overlay */
-  
-  @include keyframes('overlay') {
-	0%   { opacity: 0; }
-	100% { opacity: 1; }
-  }
-  
-  #overlay {
-	@include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
-	background-attachment: fixed, fixed;
-	background-image: url('images/overlay-pattern.png'), url('images/overlay.svg');
-	background-position: top left, center center;
-	background-repeat: repeat, no-repeat;
-	background-size: auto, cover;
-	height: 100%;
-	left: 0;
-	opacity: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-  }
-  
-  /* Main */
-  
-  #main {
-	height: 100%;
-	left: 0;
-	position: fixed;
-	text-align: center;
-	top: 0;
-	width: 100%;
-  
-	&:before {
-	  content: '';
-	  display: inline-block;
-	  height: 100%;
-	  margin-right: 0;
-	  vertical-align: middle;
-	  width: 1px;
+	#bg {
+		@include vendor('animation', 'bg #{_duration(bg)} linear infinite');
+		@include vendor('backface-visibility', 'hidden');
+		@include vendor('transform', 'translate3d(0,0,0)');
+
+		/* Set your background with this */
+		background: _misc(bg);
+
+		background-repeat: repeat-x;
+		height: 100%;
+		left: 0;
+		opacity: 1;
+		position: fixed;
+		top: 0;
 	}
-  }
+
+	@include bg(_misc(bg-width) * 1.5);
+
+/* Overlay */
+
+	@include keyframes('overlay') {
+		0%		{ opacity: 0; }
+		100%	{ opacity: 1; }
+	}
+
+	#overlay {
+		@include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
+		background-attachment: fixed, fixed;
+		background-image: url('images/overlay-pattern.png'), url('images/overlay.svg');
+		background-position: top left, center center;
+		background-repeat: repeat, no-repeat;
+		background-size: auto, cover;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+
+/* Main */
+
+	#main {
+		height: 100%;
+		left: 0;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+
+		&:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			margin-right: 0;
+			vertical-align: middle;
+			width: 1px;
+		}
+	}
 
 /* Header */
 
@@ -291,7 +288,7 @@
 
 		h1 {
 			font-size: 4.35em;
-			font-weight: 300;
+			font-weight: 900;
 			letter-spacing: -0.035em;
 			line-height: 1em;
 		}
@@ -299,7 +296,7 @@
 		p {
 			font-size: 1.25em;
 			margin: 0.75em 0 0.25em 0;
-			opacity: 0.5;
+			opacity: 0.75;
 		}
 
 		nav {
