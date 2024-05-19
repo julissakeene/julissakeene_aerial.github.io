@@ -209,12 +209,15 @@
 		/* Set your background with this */
 		background: _misc(bg);
 
+		background-size: cover;
 		background-repeat: repeat-x;
-		height: 100%;
+		background-position: center;
+		height: 100vw;
 		left: 0;
 		opacity: 1;
 		position: fixed;
 		top: 0;
+		width: 100vw;
 	}
 
 	@include bg(_misc(bg-width) * 1.5);
