@@ -286,9 +286,12 @@
 		vertical-align: middle;
 		width: 90%;
 
-		img src assets/css/images/JK1.JPG {
-			position: relative;
-			size: 30px;
+		profile-image {
+			width: 100px; /* Set the desired width */
+			height: auto; /* Maintain aspect ratio */
+			border-radius: 50%; /* Apply a circular border-radius for a round profile image */
+			margin-bottom: 20px; /* Add some spacing between the image and the heading */
+		  }
 		}
 
 		h1 {
